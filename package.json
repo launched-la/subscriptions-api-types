@@ -1,0 +1,7 @@
+{
+  "name": "subscriptions-api-types",
+  "version": "1.0.0",
+  "description": "The Typescript types for subscription-api",
+  "author": "Ethan Jon",
+  "license": "UNLICENSED"
+}
