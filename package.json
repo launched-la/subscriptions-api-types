@@ -1,5 +1,5 @@
 {
-  "name": "subscriptions-api-types",
+  "name": "@types/subscriptions-api",
   "version": "1.0.0",
   "description": "The Typescript types for subscription-api",
   "author": "Ethan Jon",
