@@ -3,6 +3,11 @@ declare namespace Shopify {
     items: Item[],
   }
 
+  interface Collection {
+    id: number,
+    products?: Product[],
+  }
+
   interface GroupedItem {
     children?: Item[],
     item: Item,
@@ -48,5 +53,9 @@ declare namespace Shopify {
 
   interface Variant {
     id: number,
+    name: string,
+    option1: string,
+    price: number,
+    title: string,
   }
 }
