@@ -4,7 +4,7 @@ declare namespace Shopify {
   }
 
   interface GroupedItem {
-    children: Item[],
+    children?: Item[],
     item: Item,
   }
 
