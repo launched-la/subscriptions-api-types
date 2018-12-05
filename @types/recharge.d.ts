@@ -4,8 +4,9 @@ declare namespace Recharge {
   }
 
   interface BundleSubscription {
+    children: Subscription[],
+    id: string,
     parent: Subscription,
-    children: Subscription[]
   }
 
   interface Charge {
