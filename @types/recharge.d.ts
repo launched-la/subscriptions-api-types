@@ -3,12 +3,6 @@ declare namespace Recharge {
     id: number,
   }
 
-  interface BundleSubscription {
-    children: Subscription[],
-    id: string,
-    parent: Subscription,
-  }
-
   interface Charge {
     address_id: number,
     billing_address: Address,
@@ -75,6 +69,11 @@ declare namespace Recharge {
 
   interface DiscountCode {
     id: number,
+  }
+
+  interface GroupedSubscription {
+    children: Subscription[],
+    subscription: Subscription,
   }
 
   interface LineItem {

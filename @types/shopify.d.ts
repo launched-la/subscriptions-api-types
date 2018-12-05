@@ -1,6 +1,25 @@
 declare namespace Shopify {
-  interface Variant {
+  interface Cart {
+    items: Item[],
+  }
+
+  interface GroupedItem {
+    children: Item[],
+    item: Item,
+  }
+
+  interface Item {
     id: number,
+    key: string,
+    price: number,
+    properties?: {
+      bundle_id?: string,
+      parent_bundle_id?: string,
+    },
+    quantity: number,
+    variant_options: string[],
+    variant_title: string,
+    title: string,
   }
 
   interface Product {
@@ -24,6 +43,10 @@ declare namespace Shopify {
   }
 
   interface ProductImage {
+    id: number,
+  }
+
+  interface Variant {
     id: number,
   }
 }
