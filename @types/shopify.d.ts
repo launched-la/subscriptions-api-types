@@ -23,7 +23,15 @@ declare namespace Shopify {
 
   interface Collection {
     id: number,
-    products?: Product[],
+    handle: string,
+    title: string,
+    updated_at: string,
+    body_html: string,
+    published_at: string,
+    sort_order: 'best-selling',
+    template_suffix: string,
+    published_scope: 'web',
+    admin_graphql_api_id: string,
   }
 
   interface Customer {
