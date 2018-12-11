@@ -72,7 +72,7 @@ declare namespace Recharge {
   }
 
   interface GroupedSubscription {
-    children?: Subscription[],
+    children: Subscription[],
     subscription: Subscription,
   }
 
