@@ -1,6 +1,16 @@
 declare namespace Recharge {
   interface Address {
+    address1: string,
+    address2: string,
+    city: string,
+    company: string,
+    country: string,
+    first_name: string,
     id: number,
+    last_name: string,
+    phone: string,
+    province: string,
+    zip: string,
   }
 
   interface Charge {
