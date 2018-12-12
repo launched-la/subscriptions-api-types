@@ -95,6 +95,7 @@ declare namespace Shopify {
   interface Metafield {
     id: number,
     key: string,
+    namespace: string,
     value: string | number,
   }
 
