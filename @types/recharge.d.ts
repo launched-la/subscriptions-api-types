@@ -117,6 +117,7 @@ declare namespace Recharge {
   }
 
   interface Subscription {
+    address?: Address,
     address_id: number,
     cancellation_reason: string,
     cancellation_reason_comments: string,
