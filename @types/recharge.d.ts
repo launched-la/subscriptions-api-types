@@ -149,4 +149,10 @@ declare namespace Recharge {
     frequencies: number[],
     unit: string,
   }
+
+  interface SubscriptionUpdateInput {
+    charge_interval_frequency: string,
+    order_interval_frequency: string,
+    order_interval_unit: string,
+  }
 }
