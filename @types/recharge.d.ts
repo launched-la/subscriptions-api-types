@@ -13,7 +13,7 @@ declare namespace Recharge {
     zip: string,
   }
 
-  interface AddressInput {
+  interface AddressUpdateInput {
     address1?: string,
     address2?: string,
     city?: string,
