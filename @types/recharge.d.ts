@@ -144,4 +144,9 @@ declare namespace Recharge {
     updated_at: string,
     variant_title: string,
   }
+  
+  interface SubscriptionFrequencies {
+    frequencies: number[],
+    unit: string,
+  }
 }
