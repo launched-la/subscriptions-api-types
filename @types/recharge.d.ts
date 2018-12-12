@@ -71,6 +71,10 @@ declare namespace Recharge {
     id: number,
   }
 
+  interface GetSubscriptionInput {
+    getAddress?: boolean,
+  }
+
   interface GroupedSubscription {
     children: Subscription[],
     subscription: Subscription,
@@ -152,8 +156,8 @@ declare namespace Recharge {
   }
 
   interface SubscriptionUpdateInput {
-    charge_interval_frequency: string,
-    order_interval_frequency: string,
-    order_interval_unit: string,
+    charge_interval_frequency?: string,
+    order_interval_frequency?: string,
+    order_interval_unit?: string,
   }
 }
