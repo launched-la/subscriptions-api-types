@@ -13,6 +13,19 @@ declare namespace Recharge {
     zip: string,
   }
 
+  interface AddressInput {
+    address1?: string,
+    address2?: string,
+    city?: string,
+    company?: string,
+    country?: string,
+    first_name?: string,
+    last_name?: string,
+    phone?: string,
+    province?: string,
+    zip?: string,
+  }
+
   interface Charge {
     address_id: number,
     billing_address: Address,
