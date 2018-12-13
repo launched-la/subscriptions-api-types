@@ -17,6 +17,17 @@ declare namespace Shopify {
     province_code: string,
   }
 
+  interface Bundle {
+    mainProduct: Product,
+    possibleChoices: Product[],
+    addOns: Product[],
+    discountAddOns: Product[],
+    autoAddOns: Product[],
+    allocationLength: number,
+    numAddOns: number,
+    numDiscountAddOns: number,
+  }
+
   interface Cart {
     items: Item[],
   }
