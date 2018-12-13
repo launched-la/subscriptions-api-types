@@ -19,7 +19,7 @@ declare namespace Shopify {
 
   interface Bundle {
     mainProduct?: Product,
-    possibleChoices?: Product[],
+    possibleChoices?: Variant[],
     addOns?: Product[],
     discountAddOns?: Product[],
     autoAddOns?: Product[],
