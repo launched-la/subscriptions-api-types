@@ -94,10 +94,6 @@ declare namespace Recharge {
     id: number,
   }
 
-  interface GetSubscriptionInput {
-    getAddress?: boolean,
-  }
-
   interface GroupedSubscription {
     children: Subscription[],
     subscription: Subscription,
