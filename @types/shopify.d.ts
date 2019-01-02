@@ -228,7 +228,6 @@ declare namespace Shopify {
 
   interface Variant {
     id: number,
-    name: string,
     option1: string,
     price: number,
     title: string,
