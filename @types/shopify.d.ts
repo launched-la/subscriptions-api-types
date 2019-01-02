@@ -18,14 +18,17 @@ declare namespace Shopify {
   }
 
   interface Bundle {
-    mainProduct?: Product,
-    possibleChoices?: Variant[],
     addOns?: Product[],
-    discountAddOns?: Product[],
-    autoAddOns?: Product[],
     allocationLength: number,
+    autoAddOns?: Product[],
+    discountAddOns?: Product[],
+    mainProduct?: Product,
     numAddOns: number,
     numDiscountAddOns: number,
+    possibleChoices?: Variant[],
+    shippingIntervalFrequencies: number[],
+    shippingIntervalUnitType: string,
+    subscriptionId: string,
   }
 
   interface Cart {
