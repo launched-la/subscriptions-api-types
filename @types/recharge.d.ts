@@ -174,6 +174,12 @@ declare namespace Recharge {
     unit: string,
   }
 
+  interface SubscriptionItemUpdateInput {
+    properties?: string, // JSON
+    quantity?: number,
+    variantId: number,
+  }
+
   interface SubscriptionUpdateInput {
     charge_interval_frequency?: string,
     order_interval_frequency?: string,
