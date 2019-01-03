@@ -232,6 +232,7 @@ declare namespace Shopify {
     id: number,
     option1: string,
     price: number | string, // API = string, JS = number
+    product_id: number,
     title: string,
   }
 }
