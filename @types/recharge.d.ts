@@ -176,7 +176,7 @@ declare namespace Recharge {
 
   interface SubscriptionItemUpdateInput {
     properties?: string, // JSON
-    quantity?: number,
+    quantity: number,
     variantId: number,
   }
 
