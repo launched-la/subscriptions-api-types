@@ -102,6 +102,8 @@ declare namespace Shopify {
     title: string,
   }
 
+  type CreateItemParams = [number, {properties?: object, quantity?: number}?]
+
   interface LineItem {
     id: number,
   }
