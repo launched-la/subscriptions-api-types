@@ -95,6 +95,7 @@ declare namespace Recharge {
   }
 
   interface GroupedSubscription {
+    address?: Address,
     children: Subscription[],
     subscription: Subscription,
   }
@@ -140,7 +141,6 @@ declare namespace Recharge {
   }
 
   interface Subscription {
-    address?: Address,
     address_id: number,
     cancellation_reason: string,
     cancellation_reason_comments: string,
