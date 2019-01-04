@@ -229,6 +229,7 @@ declare namespace Shopify {
   }
 
   interface Variant {
+    available: boolean,
     id: number,
     option1: string,
     price: number | string, // API = string, JS = number
