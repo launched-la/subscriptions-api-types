@@ -106,6 +106,31 @@ declare namespace Shopify {
 
   interface LineItem {
     id: number,
+    variant_id: number,
+    title: string,
+    quantity: number,
+    price: string,
+    sku: string,
+    variant_title: string,
+    vendor: string,
+    fulfillment_service: string,
+    product_id: number,
+    requires_shipping: boolean,
+    taxable: boolean,
+    gift_card: boolean,
+    name: string,
+    variant_inventory_management: string,
+    properties: object[],
+    product_exists: boolean,
+    fulfillable_quantity: number,
+    grams: number,
+    total_discount: string,
+    fulfillment_status: any,
+    price_set: any,
+    total_discount_set: any[],
+    discount_allocations: any[],
+    admin_graphql_api_id: string,
+    tax_lines: any[],
   }
 
   interface Metafield {
