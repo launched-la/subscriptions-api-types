@@ -6,6 +6,7 @@ declare namespace Stripe {
     exp_month: number,
     exp_year: number,
     last4: string,
+    name: string,
   }
 
   interface Customer {
