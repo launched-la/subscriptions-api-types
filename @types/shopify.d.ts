@@ -92,6 +92,8 @@ declare namespace Shopify {
     id: number,
     key: string,
     price: number,
+    product_description: string,
+    product_title: string,
     properties?: {
       bundle_id?: string,
       parent_bundle_id?: string,
