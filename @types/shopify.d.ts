@@ -90,6 +90,7 @@ declare namespace Shopify {
 
   interface Item {
     id: number,
+    image: string,
     key: string,
     price: number,
     product_description: string,
