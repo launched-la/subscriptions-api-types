@@ -260,7 +260,10 @@ declare namespace Shopify {
     available?: boolean, // only available via JS
     id: number,
     inventory_quantity?: number, // only available via API
+    name: string,
     option1: string,
+    option2: string,
+    option3: string,
     price: number | string, // API = string, JS = number
     product_id: number,
     title: string,
