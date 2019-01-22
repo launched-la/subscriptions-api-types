@@ -158,7 +158,7 @@ declare namespace Shopify {
     published_scope: string,
     admin_graphql_api_id: string,
     variants: Variant[],
-    options: object[],
+    options: string[] | {name: string}[], // the API gives name: string array, JSON gives string[]
     images: ProductImage[],
     image: ProductImage,
   }
