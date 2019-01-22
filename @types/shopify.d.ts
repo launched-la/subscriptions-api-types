@@ -268,6 +268,7 @@ declare namespace Shopify {
     available?: boolean, // only available via JS
     featured_image: ProductImage | null,
     id: number,
+    image_id: number,
     inventory_quantity?: number, // only available via API
     name: string,
     option1: string,
