@@ -165,6 +165,14 @@ declare namespace Shopify {
 
   interface ProductImage {
     id: number,
+    created_at: string,
+    height: number,
+    position: number,
+    product_id: number,
+    src: string,
+    updated_at: string,
+    variant_ids: number[],
+    width: number,
   }
 
   interface Order {
@@ -258,6 +266,7 @@ declare namespace Shopify {
 
   interface Variant {
     available?: boolean, // only available via JS
+    featured_image: ProductImage,
     id: number,
     inventory_quantity?: number, // only available via API
     name: string,
