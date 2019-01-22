@@ -266,7 +266,7 @@ declare namespace Shopify {
 
   interface Variant {
     available?: boolean, // only available via JS
-    featured_image: ProductImage,
+    featured_image: ProductImage | null,
     id: number,
     inventory_quantity?: number, // only available via API
     name: string,
