@@ -90,6 +90,13 @@ declare namespace Recharge {
     has_valid_payment_method: boolean,
   }
 
+  interface CustomerUpdateInput {
+    billing_phone: string,
+    email: string,
+    first_name: string,
+    last_name: string,
+  }
+
   interface DiscountCode {
     id: number,
   }
