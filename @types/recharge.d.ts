@@ -68,6 +68,7 @@ declare namespace Recharge {
   }
 
   interface Customer {
+    children?: Launched.Child[],
     id: number,
     hash: string,
     shopify_customer_id: string,
