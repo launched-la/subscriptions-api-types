@@ -5,4 +5,11 @@ declare namespace Launched {
     birthdate: string,
     size: string,
   }
+
+  interface ChildEditInput {
+    name?: string,
+    gender?: string,
+    birthdate?: string,
+    size?: string,
+  }
 }
