@@ -3,6 +3,5 @@ declare namespace Launched {
     name: string,
     gender: string,
     birthdate: string,
-    size: string,
   }
 }
