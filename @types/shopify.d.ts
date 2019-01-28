@@ -263,6 +263,7 @@ declare namespace Shopify {
 
   interface ShippingLine {
     code: string,
+    discounted_price: string,
   }
 
   interface Variant {
