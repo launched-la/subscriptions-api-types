@@ -148,6 +148,7 @@ declare namespace Shopify {
     id: number,
     title: string,
     body_html: string,
+    featured_image?: string, // from JSON
     vendor: string,
     product_type: string,
     created_at: string,
