@@ -193,4 +193,10 @@ declare namespace Recharge {
     order_interval_frequency?: string,
     order_interval_unit?: string,
   }
+
+  interface Webhook {
+    address: string,
+    id: number,
+    topic: string,
+  }
 }
