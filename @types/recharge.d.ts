@@ -37,7 +37,7 @@ declare namespace Recharge {
     created_at: string,
     customer_hash: string,
     customer_id: number,
-    discount_codes: DiscountCode[],
+    discount_codes: Discount[],
     email: string,
     first_name: string,
     has_uncommited_changes: boolean,
@@ -98,7 +98,7 @@ declare namespace Recharge {
     last_name: string,
   }
 
-  interface DiscountCode {
+  interface Discount {
     code: string,
     id: number,
   }
