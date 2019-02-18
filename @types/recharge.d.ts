@@ -99,6 +99,7 @@ declare namespace Recharge {
   }
 
   interface DiscountCode {
+    code: string,
     id: number,
   }
 
