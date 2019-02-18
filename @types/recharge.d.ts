@@ -5,6 +5,7 @@ declare namespace Recharge {
     city: string,
     company: string,
     country: string,
+    discount: Discount,
     first_name: string,
     id: number,
     last_name: string,
