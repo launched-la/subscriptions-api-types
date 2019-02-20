@@ -105,8 +105,24 @@ declare namespace Recharge {
   }
 
   interface Discount {
-    code: string,
     id: number,
+    code: string,
+    value: number,
+    ends_at: string,
+    starts_at: string,
+    status: 'enabled' | 'disabled',
+    usage_limit: number,
+    applies_to_id: number,
+    discount_type: 'percentage' | 'fixed',
+    applies_to: number,
+    applies_to_resource: string,
+    times_used: number,
+    duration: 'forever' | 'usage_limit' | 'single_use',
+    duration_usage_limit: number,
+    applies_to_product_type?: 'ALL' | 'ONETIME' | 'SUBSCRIPTION',
+    created_at: string,
+    updated_at: string,
+    once_per_customer: boolean,
   }
 
   interface GroupedSubscription {
