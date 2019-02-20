@@ -113,7 +113,7 @@ declare namespace Recharge {
     status: 'enabled' | 'disabled',
     usage_limit: number,
     applies_to_id: number,
-    discount_type: 'percentage' | 'fixed',
+    discount_type: 'percentage' | 'fixed_amount',
     applies_to: number,
     applies_to_resource: string,
     times_used: number,
