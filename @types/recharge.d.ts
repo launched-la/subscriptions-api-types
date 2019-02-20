@@ -39,7 +39,11 @@ declare namespace Recharge {
     created_at: string,
     customer_hash: string,
     customer_id: number,
-    discount_codes: Discount[],
+    discount_codes: {
+      amount: string,
+      code: string,
+      type: string,
+    }[],
     email: string,
     first_name: string,
     has_uncommited_changes: boolean,
