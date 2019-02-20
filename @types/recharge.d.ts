@@ -133,6 +133,16 @@ declare namespace Recharge {
 
   interface LineItem {
     id: number,
+    price: number,
+    product_title: string,
+    properties: {name: string, value: string}[],
+    quantity: number,
+    shopify_product_id: string,
+    shopify_variant_id: string,
+    sku: string,
+    subscription_id: number,
+    title: string,
+    variant_title: string,
   }
 
   interface Order {
