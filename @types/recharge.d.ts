@@ -127,6 +127,7 @@ declare namespace Recharge {
 
   interface GroupedSubscription {
     address?: Address,
+    charges?: Charge[],
     children: Subscription[],
     subscription: Subscription,
   }
