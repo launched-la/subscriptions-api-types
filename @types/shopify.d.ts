@@ -19,6 +19,7 @@ declare namespace Shopify {
 
   interface Bundle {
     addOns?: Product[],
+    autoAddOnQtys: number[],
     allocationLength: number,
     autoAddOns?: Product[],
     discountAddOns?: Product[],
