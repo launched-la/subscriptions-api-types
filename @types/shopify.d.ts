@@ -280,6 +280,7 @@ declare namespace Shopify {
     option3: string,
     price: number | string, // API = string, JS = number
     product_id: number,
+    sku: string,
     title: string,
   }
 }
