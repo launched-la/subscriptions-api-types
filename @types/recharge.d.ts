@@ -95,6 +95,8 @@ declare namespace Recharge {
     status: 'ACTIVE',
     stripe_customer_token: string,
     has_valid_payment_method: boolean,
+    number_active_subscriptions: number,
+    number_subscriptions: number,
   }
 
   interface CustomerUpdateInput {
