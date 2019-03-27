@@ -205,7 +205,6 @@ declare namespace Recharge {
     product_title: string,
     properties: {name: string, value: string}[],
     quantity: number,
-    shipping_interval_frequency: string,
     shopify_product_id: number,
     shopify_variant_id: number,
     sku: string,
