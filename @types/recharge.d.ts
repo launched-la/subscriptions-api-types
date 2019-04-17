@@ -45,6 +45,8 @@ declare namespace Recharge {
       type: string,
     }[],
     email: string,
+    error: string,
+    error_type: string,
     first_name: string,
     has_uncommited_changes: boolean,
     id: number,
