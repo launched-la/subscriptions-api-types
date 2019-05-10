@@ -25,4 +25,26 @@ declare namespace Returnly {
     updated_at: string,
     refunded_at: string,
   }
+
+  interface ReturnLineItem {
+    ext_order_line_item_id: string,
+    ext_order_id: string,
+    ext_order_number: string,
+    sku: string,
+    product_name: string,
+    product_id: string,
+    variant_id: string,
+    shipping_label_id: null,
+    return_cause: string,
+    original_amount: string,
+    discount_amount: string,
+    estimated_refund_amount: string,
+    restocking_fee_amount: string,
+    order_shipping_refund_amount: string,
+    return_label_cost_amount: string,
+    return_shipping_paid_amount: string,
+    total_refund_amount: string,
+    tax_amount: string,
+    units: number,
+  }
 }
