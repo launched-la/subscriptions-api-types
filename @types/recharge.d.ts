@@ -176,6 +176,7 @@ declare namespace Recharge {
     shopify_order_id: string,
     shopify_order_number: number,
     status: 'SUCCESS',
+    total_discounts: string,
     total_price: string,
     transaction_id: string,
     type: 'CHECKOUT',
