@@ -54,6 +54,7 @@ declare namespace Recharge {
     line_items: LineItem[],
     note: string,
     note_attributes: string[],
+    number_times_tried: number,
     processed_at: string,
     scheduled_at: string,
     shipments_count: number,
