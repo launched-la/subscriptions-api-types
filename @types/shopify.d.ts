@@ -222,7 +222,7 @@ declare namespace Shopify {
     landing_site_ref: string,
     order_number: number,
     discount_applications: any,
-    discount_codes: any,
+    discount_codes: Array<{code: string, amount: string, type: string}>,
     note_attributes: {name: string, value: string}[],
     payment_gateway_names: string[],
     processing_method: string,
