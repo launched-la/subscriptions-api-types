@@ -269,7 +269,8 @@ declare namespace Shopify {
   }
 
   interface Variant {
-    available?: boolean, // only available via JS
+    available?: boolean, // only available via JS,
+    compare_at_price: number | string,
     featured_image: ProductImage | null,
     id: number,
     image_id: number,
