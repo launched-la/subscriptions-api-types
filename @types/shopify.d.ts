@@ -146,6 +146,7 @@ declare namespace Shopify {
 
   interface Product {
     available?: boolean,
+    description?: string,
     id: number,
     title: string,
     body_html: string,
