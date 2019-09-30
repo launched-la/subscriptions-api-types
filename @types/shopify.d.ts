@@ -275,6 +275,7 @@ declare namespace Shopify {
     featured_image: ProductImage | null,
     id: number,
     image_id: number,
+    inventory_management?: string, // API
     inventory_quantity?: number, // only available via API
     inventory_item_id?: number, // API only
     name: string,
