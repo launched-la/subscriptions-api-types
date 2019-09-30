@@ -276,6 +276,7 @@ declare namespace Shopify {
     id: number,
     image_id: number,
     inventory_quantity?: number, // only available via API
+    inventory_item_id?: number, // API only
     name: string,
     option1: string,
     option2: string,
