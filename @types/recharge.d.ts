@@ -151,14 +151,6 @@ declare namespace Recharge {
     variant_title: string,
   }
 
-  interface OneTimeProductParams {
-    startDate: string,
-    freebieProductTitle: string,
-    chargePrice: number,
-    quantity: number,
-    shopifyVariantId: number,
-    addressId: number
-  }
   interface OneTimeProduct {
     address_id: number,
     created_at: string,
@@ -175,8 +167,7 @@ declare namespace Recharge {
     sku: string,
     status: string,
     updated_at: string,
-    variant_title: string
-
+    variant_title: string,
   }
 
   interface Order {
