@@ -225,6 +225,7 @@ declare namespace Recharge {
     order_interval_frequency: string,
     order_interval_unit: string,
     price: number,
+    product?: Shopify.Product,
     product_title: string,
     properties: {name: string, value: string}[],
     quantity: number,
@@ -233,6 +234,7 @@ declare namespace Recharge {
     sku: string,
     status: 'ACTIVE',
     updated_at: string,
+    variant?: Shopify.Variant,
     variant_title: string,
   }
   
