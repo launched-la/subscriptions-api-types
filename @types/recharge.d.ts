@@ -173,7 +173,7 @@ declare namespace Recharge {
   interface Order {
     address_id: number,
     address_is_active: number,
-    billing_address: Address[],
+    billing_address: Address,
     charge_id: number,
     charge_status: string,
     created_at: string,
@@ -189,7 +189,7 @@ declare namespace Recharge {
     processed_at: string,
     scheduled_at: string,
     shipped_date: string,
-    shipping_address: Address[],
+    shipping_address: Address,
     shipping_date: string,
     shopify_cart_token: string,
     shopify_id: string,
