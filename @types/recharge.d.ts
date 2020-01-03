@@ -250,6 +250,8 @@ declare namespace Recharge {
   }
 
   interface SubscriptionUpdateInput {
+    shopify_variant_id?: number | string,
+    quantity?: number | string,
     charge_interval_frequency?: string,
     order_interval_frequency?: string,
     order_interval_unit?: string,
