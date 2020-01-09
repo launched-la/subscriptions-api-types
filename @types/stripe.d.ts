@@ -18,7 +18,7 @@ declare namespace Stripe {
   }
 
   interface InvoiceSettings {
-    default_payment_method: PaymentMethod,
+    default_payment_method?: PaymentMethod,
   }
 
   interface Customer {
