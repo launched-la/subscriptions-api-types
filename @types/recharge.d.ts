@@ -56,6 +56,7 @@ declare namespace Recharge {
     note_attributes: string[],
     number_times_tried: number,
     processed_at: string,
+    retry_date: string,
     scheduled_at: string,
     shipments_count: number,
     shipping_address: Address,
