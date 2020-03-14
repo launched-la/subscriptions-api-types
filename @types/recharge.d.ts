@@ -126,6 +126,7 @@ declare namespace Recharge {
     duration: 'forever' | 'usage_limit' | 'single_use',
     duration_usage_limit: number,
     applies_to_product_type?: 'ALL' | 'ONETIME' | 'SUBSCRIPTION',
+    first_time_customer_restriction: 'customer_must_not_exist_in_recharge',
     created_at: string,
     updated_at: string,
     once_per_customer: boolean,
