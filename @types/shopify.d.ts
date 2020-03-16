@@ -27,6 +27,7 @@ declare namespace Shopify {
     numAddOns: number,
     numDiscountAddOns: number,
     possibleChoices?: Variant[],
+    possibleNighttimeChoices:? Variant[],
     shippingIntervalFrequencies: number[],
     shippingIntervalUnitType: string,
     subscriptionId: string,
