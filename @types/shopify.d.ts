@@ -116,6 +116,7 @@ declare namespace Shopify {
     title: string,
     quantity: number,
     price: string,
+    pre_tax_price: string,
     sku: string,
     variant_title: string,
     vendor: string,
