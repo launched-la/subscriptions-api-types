@@ -137,6 +137,7 @@ declare namespace Recharge {
     charges?: Charge[],
     children: Subscription[],
     subscription: Subscription,
+    onetimes?: OneTimeProduct[], 
   }
 
   interface LineItem {
@@ -161,7 +162,7 @@ declare namespace Recharge {
     next_charge_scheduled_at?: string,
     price: number,
     product_title: string,
-    properties?: [object],
+    properties?: {name: string, value: string}[],
     quantity: number,
     recharge_product_id: number,
     shopify_product_id: number,
