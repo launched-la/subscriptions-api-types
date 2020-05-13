@@ -171,6 +171,8 @@ declare namespace Recharge {
     status: string,
     updated_at: string,
     variant_title: string,
+    product?: Shopify.Product,
+    variant?: Shopify.Variant,
   }
 
   interface Order {
