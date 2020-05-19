@@ -95,13 +95,14 @@ declare namespace Recharge {
     billing_province: string,
     billing_country: string,
     billing_phone: string,
-    processor_type: 'stripe' | 'braintree,
+    processor_type: 'stripe' | 'braintree',
     status: 'ACTIVE',
     stripe_customer_token: string,
     braintree_customer_token?: string,
     has_valid_payment_method: boolean,
     number_active_subscriptions: number,
     number_subscriptions: number,
+    payment_information: Launched.PaymentInformation
   }
 
   interface CustomerUpdateInput {
