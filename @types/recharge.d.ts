@@ -199,6 +199,7 @@ declare namespace Recharge {
     shipping_address: Address,
     shipping_date: string,
     shopify_cart_token: string,
+    shopify_customer_id: string,
     shopify_id: string,
     shopify_order_id: string,
     shopify_order_number: number,
