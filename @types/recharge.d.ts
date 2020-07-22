@@ -98,6 +98,7 @@ declare namespace Recharge {
     processor_type: 'stripe' | 'braintree',
     status: 'ACTIVE',
     stripe_customer_token: string,
+    paypal_customer_token?: string,
     braintree_customer_token?: string,
     has_valid_payment_method: boolean,
     number_active_subscriptions: number,
