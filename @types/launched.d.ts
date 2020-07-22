@@ -7,11 +7,13 @@ declare namespace Launched {
     
   interface PaymentInformation {
     type: string,
-    id: string | undefined,
-    brand: string | undefined,
-    exp_month: number | undefined,
-    exp_year: number | undefined,
-    last4: string | undefined,
-    name: string | undefined,
+    id?: string,
+    brand?: string,
+    exp_month?: number,
+    exp_year?: number,
+    last4?: string,
+    name?: string,
+    email?: string,
+    image_url?: string,
   }
 }
