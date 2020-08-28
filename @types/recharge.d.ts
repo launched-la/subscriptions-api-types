@@ -271,4 +271,16 @@ declare namespace Recharge {
     id: number,
     topic: string,
   }
+
+  interface Metafield {
+    description?: string
+    namespace: string
+    value: string
+    value_type: 'integer' | 'string' | 'json_string'
+    key: string
+    owner_resource: 'customer' | 'store' | 'subscription'
+    owner_id: number
+  }
+
+
 }
