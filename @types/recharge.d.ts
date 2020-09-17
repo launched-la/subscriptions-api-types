@@ -186,6 +186,7 @@ declare namespace Recharge {
     charge_status: string,
     created_at: string,
     customer_id: number,
+    discount_codes: {amount: string, code: string, type: string }[],
     email: string,
     first_name: string,
     hash: string,
