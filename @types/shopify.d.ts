@@ -258,14 +258,42 @@ declare namespace Shopify {
 
   interface Refund {
     id: number,
+    shipping?: { 
+      amount: string,
+      tax: string,
+      maximum_refundable: string
+    }
     order_id: number,
     created_at: string,
     note: string,
     user_id: number,
     processed_at: string,
-    refund_line_items: LineItem[],
-    transactions: any[],
+    refund_line_items: RefundLineItem[],
+    transactions: Transaction[],
     order_adjustments: any[],
+  }
+    
+  interface Transaction {
+    order_id: number
+    kind: string
+    gateway: string
+    parent_id: number
+    amount: string
+    currency: string
+    maximum_refundable: string
+  }
+
+  interface RefundLineItem {
+    quantity: number
+    line_item_id: number
+    location_id: number
+    restock_type: string
+    price: string
+    subtotal: string
+    total_tax: string
+    discounted_price: string
+    discounted_total_price: string
+    total_cart_discount_amount: string
   }
 
   interface ShippingLine {
