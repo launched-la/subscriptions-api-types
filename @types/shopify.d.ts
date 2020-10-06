@@ -110,17 +110,17 @@ declare namespace Shopify {
 
   type CreateItemParams = [number, {properties?: object, quantity?: number}?]
 
-  interface LineItemTaxLine {
-    title: string
-    price: string
-    rate: number
+  interface TaxLine {
+    title: string,
+    price: string,
+    rate: number,
     price_set: {
       shop_money: {
-        amount:string
+        amount:string,
         currency_code: string
       }
       presentment_money: {
-        amount: string
+        amount: string,
         currency_code: string
       }
     }
@@ -153,7 +153,7 @@ declare namespace Shopify {
     total_discount_set: any[],
     discount_allocations: any[],
     admin_graphql_api_id: string,
-    tax_lines: LineItemTaxLine[],
+    tax_lines: TaxLine[],
   }
 
   interface Metafield {
@@ -250,7 +250,7 @@ declare namespace Shopify {
     checkout_id: number,
     source_name: string,
     fulfillment_status: string,
-    tax_lines: any,
+    tax_lines: TaxLine[],
     tags: string,
     contact_email: string,
     order_status_url: string,
