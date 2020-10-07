@@ -24,6 +24,7 @@ declare namespace Shopify {
     autoAddOns?: Product[],
     discountAddOns?: Product[],
     mainProduct?: Product,
+    mainTrainingPantsProduct?: Product,
     numAddOns: number,
     numDiscountAddOns: number,
     possibleChoices?: Variant[],
