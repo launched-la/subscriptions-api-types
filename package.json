@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "description": "The Typescript types for subscription-api",
   "author": "Ethan Jon",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "prettier": "^2.1.2"
+  }
 }
