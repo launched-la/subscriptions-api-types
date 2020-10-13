@@ -28,6 +28,31 @@ declare namespace Recharge {
     zip?: string
   }
 
+  interface AsyncBatch {
+    batch_type?:
+      | 'address_discount_apply'
+      | 'address_discount_remove'
+      | 'discount_create'
+      | 'discount_delete'
+      | 'discount_update'
+      | 'product_create'
+      | 'product_delete'
+      | 'product_update'
+      | 'bulk_subscriptions_create'
+      | 'bulk_subscriptions_delete'
+      | 'bulk_subscriptions_update'
+      | 'onetime_create'
+    closed_at?: string
+    created_at?: string
+    fail_task_count?: number
+    id?: number
+    status?: 'started' | 'processing' | 'completed' | 'failed'
+    submitted_at?: string
+    success_task_count?: number
+    total_task_count?: number
+    updated_at?: string
+  }
+
   interface Charge {
     address_id: number
     billing_address: Address
