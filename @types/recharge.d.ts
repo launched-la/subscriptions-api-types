@@ -161,6 +161,7 @@ declare namespace Recharge {
   }
 
   interface GroupedSubscription {
+    bundleId?: number
     address?: Address
     charges?: Charge[]
     children: Subscription[]
