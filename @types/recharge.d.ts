@@ -1,3 +1,5 @@
+import { APIAction as SnacktimeAction } from '@launchedla/snacktime'
+
 declare namespace Recharge {
   interface Address {
     address1: string
@@ -167,6 +169,7 @@ declare namespace Recharge {
     children: Subscription[]
     subscription: Subscription
     onetimes?: OneTimeProduct[]
+    snacktimeActions?: SnacktimeAction[]
   }
 
   interface LineItem {
