@@ -167,6 +167,7 @@ declare namespace Recharge {
     children: Subscription[]
     subscription: Subscription
     onetimes?: OneTimeProduct[]
+    snacktimeActions?: import('@launchedla/snacktime').APIAction[]
   }
 
   interface LineItem {

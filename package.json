@@ -5,6 +5,7 @@
   "author": "Ethan Jon",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@launchedla/snacktime": "0.0.12",
     "prettier": "^2.1.2"
   }
 }
