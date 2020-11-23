@@ -156,6 +156,34 @@ declare namespace Shopify {
     admin_graphql_api_id: string
     tax_lines: TaxLine[]
   }
+  
+  interface Location {
+    id: number
+    name: string
+    address1: string
+    address2: string
+    city: string
+    zip: string
+    province: string
+    country: string
+    phone: string
+    created_at: string
+    updated_at: string
+    country_code: string
+    country_name: string
+    province_code: string
+    legacy: boolean
+    active: boolean
+    admin_graphql_api_id: string
+  }
+  
+  interface InventoryLevel {
+    inventory_item_id: number
+    location_id: number
+    available: number
+    updated_at: string
+    admin_graphql_api_id: string
+  }
 
   interface Metafield {
     id?: number
