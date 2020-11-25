@@ -350,9 +350,11 @@ declare namespace Shopify {
     available?: boolean // only available via JS,
     compare_at_price: number | string
     featured_image: ProductImage | null
+    fulfillment_service?: string
     id: number
     image_id: number
     inventory_management?: string // API
+    inventory_policy?: string
     inventory_quantity?: number // only available via API
     inventory_item_id?: number // API only
     name: string
@@ -361,6 +363,7 @@ declare namespace Shopify {
     option3: string
     price: number | string // API = string, JS = number
     product_id: number
+    requires_shipping?: boolean
     sku: string
     title: string
   }
