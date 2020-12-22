@@ -131,6 +131,12 @@ declare namespace Recharge {
     payment_information: Launched.PaymentInformation
   }
 
+  interface CustomerUpdatePayment {
+    stripe_customer_token?: string
+    paypal_customer_token?: string
+    braintree_customer_token?: string
+  }
+
   interface CustomerUpdateInput {
     billing_phone: string
     email: string
