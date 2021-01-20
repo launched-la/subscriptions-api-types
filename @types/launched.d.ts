@@ -3,7 +3,7 @@ declare namespace Launched {
     name: string
     gender: string
     birthdate: string
-    bundleid?: string
+    bundle_id?: string
   }
 
   interface PaymentInformation {
