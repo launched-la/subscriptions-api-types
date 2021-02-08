@@ -307,12 +307,13 @@ declare namespace Recharge {
   }
 
   interface Metafield {
-    description?: string
-    namespace: string
-    value: string
-    value_type: 'integer' | 'string' | 'json_string'
+    id?: number
     key: string
-    owner_resource: 'customer' | 'store' | 'subscription'
+    namespace: string
+    owner_resource: 'store' | 'customer' | 'subscription' | 'order' | 'charge'
     owner_id: number
+    value: string
+    value_type: 'string' | 'json_string' | 'integer'
+    description?: string
   }
 }
