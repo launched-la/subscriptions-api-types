@@ -126,6 +126,7 @@ declare namespace Recharge {
     paypal_customer_token?: string
     braintree_customer_token?: string
     has_valid_payment_method: boolean
+    metafields?: Recharge.Metafield[]
     number_active_subscriptions: number
     number_subscriptions: number
     payment_information: Launched.PaymentInformation
