@@ -156,7 +156,7 @@ declare namespace Shopify {
     admin_graphql_api_id: string
     tax_lines: TaxLine[]
   }
-  
+
   interface Location {
     id: number
     name: string
@@ -176,7 +176,7 @@ declare namespace Shopify {
     active: boolean
     admin_graphql_api_id: string
   }
-  
+
   interface InventoryLevel {
     inventory_item_id: number
     location_id: number
@@ -357,6 +357,7 @@ declare namespace Shopify {
     inventory_policy?: string
     inventory_quantity?: number // only available via API
     inventory_item_id?: number // API only
+    future_inventory_quantity?: number
     name: string
     option1: string
     option2: string
