@@ -176,6 +176,7 @@ declare namespace Recharge {
     onetimes?: OneTimeProduct[]
     snacktimeActions?: import('@launchedla/snacktime').APIAction[]
     bundleInfo?: Launched.BundleInfo
+    bundleSavings?: string
   }
 
   interface LineItem {
