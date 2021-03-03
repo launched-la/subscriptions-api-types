@@ -90,7 +90,12 @@ declare namespace Shopify {
     children?: Item[]
     item: Item
   }
-
+  
+  interface NamedProperty {
+    name: string
+    value: string
+  }
+ 
   interface Item {
     handle: string
     id: number
@@ -99,7 +104,7 @@ declare namespace Shopify {
     price: number
     product_description: string
     product_title: string
-    properties?: {
+    NamedProperty?: {
       [key: string]: string
     }
     quantity: number
@@ -144,7 +149,7 @@ declare namespace Shopify {
     gift_card: boolean
     name: string
     variant_inventory_management: string
-    properties: object[]
+    properties?: NamedProperty[]
     product_exists: boolean
     fulfillable_quantity: number
     grams: number
