@@ -104,7 +104,7 @@ declare namespace Shopify {
     price: number
     product_description: string
     product_title: string
-    NamedProperty?: {
+    properties?: {
       [key: string]: string
     }
     quantity: number
