@@ -25,6 +25,5 @@ declare namespace Launched {
     name?: string
     email?: string
     image_url?: string
-    payment_gate?: boolean
   }
 }

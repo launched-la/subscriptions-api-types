@@ -112,6 +112,7 @@ declare namespace Recharge {
     updated_at: string
     first_name: string
     last_name: string
+    metafields?: Recharge.Metafield[]
     billing_address1: string
     billing_address2: string
     billing_zip: string
@@ -126,9 +127,9 @@ declare namespace Recharge {
     paypal_customer_token?: string
     braintree_customer_token?: string
     has_valid_payment_method: boolean
-    metafields?: Recharge.Metafield[]
     number_active_subscriptions: number
     number_subscriptions: number
+    payment_failure?: boolean
     payment_information: Launched.PaymentInformation
   }
 
