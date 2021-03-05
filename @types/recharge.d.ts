@@ -112,9 +112,7 @@ declare namespace Recharge {
     updated_at: string
     first_name: string
     last_name: string
-    include?: {
-      metafields?: Recharge.Metafield[]
-    }
+    metafields?: Recharge.Metafield[]
     billing_address1: string
     billing_address2: string
     billing_zip: string
