@@ -353,6 +353,7 @@ declare namespace Shopify {
 
   interface Variant {
     available?: boolean // only available via JS,
+    barcode: string
     compare_at_price: number | string
     featured_image: ProductImage | null
     fulfillment_service?: string
