@@ -108,6 +108,7 @@ declare namespace Shopify {
       [key: string]: string
     }
     quantity: number
+    sku?: string
     variant_id: number
     variant_options: string[]
     variant_title: string
