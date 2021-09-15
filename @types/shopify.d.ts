@@ -375,4 +375,63 @@ declare namespace Shopify {
     sku: string
     title: string
   }
+
+  interface ShippingAddressCreateArgs {
+    address1: string
+    address2: string
+    city: string
+    company: string
+    first_name: string
+    last_name: string
+    phone: string
+    zip: string
+    province: string
+    country: string
+  }
+
+  interface AppliedDiscountArgs {
+    title?: string
+    description?: string
+    value: number
+    value_type: 'percentage' | 'fixed_amount'
+  }
+  interface CreateDraftOrderArgs {
+    shipping_address?: ShippingAddressCreateArgs
+    note?: string
+    note_attributes?: Array<{ name: string, value: string }>
+    email?: string
+    currency: 'USD' | 'CAD'
+    line_items: Array<{ variant_id: number, quantity: number, properties?: Array<NamedProperty>, applied_discount?: AppliedDiscountArgs, price?: number }>
+    shipping_line?: { handle: string, price: number, title: string }
+    tags?: string
+    customer?: { id: number }
+    applied_discount?: AppliedDiscountArgs
+    use_customer_default_address?: boolean
+  }
+
+  interface DraftOrderLineItem extends LineItem {
+    appliedDiscount?: AppliedDiscountArgs & {amount: number}
+  }
+  interface DraftOrder {
+    id: number
+    note?: string
+    email?: string
+    taxes_included: boolean
+    currency: 'USD' | 'CAD'
+    created_at: string
+    updated_at: string
+    tax_exempt: boolean
+    completed_at?: string
+    name: string
+    status: 'open' | 'invoice_sent' | 'completed'
+    line_items: DraftOrderLineItem[]
+    shipping_address?: Address
+    billing_address?: Address
+    note_attributes?: Array<{ name: string, value: string }>
+    total_price?: string
+    subtotal_price?: string
+    total_tax?: string
+    tags?: string
+    customer: Customer
+  }
 }
