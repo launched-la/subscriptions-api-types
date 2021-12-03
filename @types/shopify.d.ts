@@ -84,6 +84,9 @@ declare namespace Shopify {
     tracking_company: string
     tracking_number: string
     updated_at: string
+    name: string
+    status: string
+    line_items: LineItem[]
   }
 
   interface GroupedItem {
