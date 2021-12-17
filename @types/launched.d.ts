@@ -12,8 +12,8 @@ declare namespace Launched {
     name: string
     gender: string
     birthMonth: MonthInt
+    birthYear?: number
   }
-  
 
   interface PaymentInformation {
     type: string
