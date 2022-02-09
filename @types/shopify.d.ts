@@ -248,6 +248,7 @@ declare namespace Shopify {
     token: string
     gateway: string
     test: boolean
+    current_total_price: string
     total_price: string
     subtotal_price: string
     total_weight: number
@@ -300,6 +301,7 @@ declare namespace Shopify {
     total_price_set: any
     total_tax_set: any
     total_tip_received: string
+    total_outstanding: string
     admin_graphql_api_id: string
     line_items: LineItem[]
     shipping_lines: ShippingLine[]
