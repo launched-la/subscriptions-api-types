@@ -77,7 +77,7 @@ declare namespace Recharge {
     has_uncommited_changes: boolean
     id: number
     last_name: string
-    line_items: (LineItem & {type?: string})[]
+    line_items: (LineItem & { type?: string })[]
     note: string
     note_attributes: string[]
     number_times_tried: number

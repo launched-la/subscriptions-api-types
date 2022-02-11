@@ -93,12 +93,12 @@ declare namespace Shopify {
     children?: Item[]
     item: Item
   }
-  
+
   interface NamedProperty {
     name: string
     value: string
   }
- 
+
   interface Item {
     handle: string
     id: number
@@ -403,11 +403,11 @@ declare namespace Shopify {
   interface CreateDraftOrderArgs {
     shipping_address?: ShippingAddressCreateArgs
     note?: string
-    note_attributes?: Array<{ name: string, value: string }>
+    note_attributes?: Array<{ name: string; value: string }>
     email?: string
     currency: 'USD' | 'CAD'
-    line_items: Array<{ variant_id: number, quantity: number, properties?: Array<NamedProperty>, applied_discount?: AppliedDiscountArgs, price?: number }>
-    shipping_line?: { handle: string, price: number, title: string }
+    line_items: Array<{ variant_id: number; quantity: number; properties?: Array<NamedProperty>; applied_discount?: AppliedDiscountArgs; price?: number }>
+    shipping_line?: { handle: string; price: number; title: string }
     tags?: string
     customer?: { id: number }
     applied_discount?: AppliedDiscountArgs
@@ -415,7 +415,7 @@ declare namespace Shopify {
   }
 
   interface DraftOrderLineItem extends LineItem {
-    appliedDiscount?: AppliedDiscountArgs & {amount: number}
+    appliedDiscount?: AppliedDiscountArgs & { amount: number }
   }
   interface DraftOrder {
     id: number
@@ -432,7 +432,7 @@ declare namespace Shopify {
     line_items: DraftOrderLineItem[]
     shipping_address?: Address
     billing_address?: Address
-    note_attributes?: Array<{ name: string, value: string }>
+    note_attributes?: Array<{ name: string; value: string }>
     total_price?: string
     subtotal_price?: string
     total_tax?: string
