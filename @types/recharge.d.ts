@@ -176,7 +176,7 @@ declare namespace Recharge {
     children: Subscription[]
     subscription: Subscription
     onetimes?: OneTimeProduct[]
-    snacktimeActions?: import('@launchedla/snacktime').APIAction[]
+    snacktimeActions?: import('@launchedla/snacktime').Types.Action[]
     bundleInfo?: Launched.BundleInfo
     bundleSavings?: string
     futureCharge?: Charge
