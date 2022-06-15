@@ -5,7 +5,7 @@
   "author": "Ethan Jon",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@launchedla/snacktime": "^0.0.34",
+    "@launchedla/snacktime": "^0.0.35",
     "prettier": "^2.1.2"
   },
   "volta": {
