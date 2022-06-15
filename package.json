@@ -1,11 +1,11 @@
 {
   "name": "@types/subscriptions-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The Typescript types for subscription-api",
   "author": "Ethan Jon",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@launchedla/snacktime": "0.0.12",
+    "@launchedla/snacktime": "^0.0.35",
     "prettier": "^2.1.2"
   },
   "volta": {
