@@ -1,11 +1,11 @@
 {
   "name": "@launchedla/subscriptions-api-types",
   "private": true,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The Typescript types for subscription-api",
   "author": "Ethan Jon",
   "license": "UNLICENSED",
-  "types": "./index.d.ts",
+  "types": "./index.ts",
   "devDependencies": {
     "@launchedla/snacktime": "^0.0.35",
     "prettier": "^2.1.2"
