@@ -1,6 +1,5 @@
 {
   "name": "@launchedla/subscriptions-api-types",
-  "private": true,
   "version": "1.0.4",
   "description": "The Typescript types for subscription-api",
   "author": "Ethan Jon",
