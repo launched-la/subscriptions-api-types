@@ -1,3 +1,5 @@
+import { Order as ShopifyOrder } from './shopify'
+
 export interface Child {
   name: string
   gender: string
@@ -24,4 +26,8 @@ export interface PaymentInformation {
   name?: string
   email?: string
   image_url?: string
+}
+
+export interface Order extends ShopifyOrder {
+  is_cancellable?: boolean
 }
