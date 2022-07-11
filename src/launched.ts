@@ -29,5 +29,5 @@ export interface PaymentInformation {
 }
 
 export interface Order extends ShopifyOrder {
-  isCancellable?: boolean
+  is_cancellable?: boolean
 }
