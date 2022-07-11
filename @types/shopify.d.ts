@@ -236,7 +236,7 @@ declare namespace Shopify {
     width: number
   }
 
-  interface Order {
+  export interface Order {
     id: number
     email: string
     closed_at: string

@@ -1,3 +1,5 @@
+///<reference path="shopify.d.ts"/>
+
 declare namespace Launched {
   interface Child {
     name: string
@@ -25,5 +27,9 @@ declare namespace Launched {
     name?: string
     email?: string
     image_url?: string
+  }
+
+  interface Order extends Shopify.Order {
+    isCancellable?: boolean
   }
 }
