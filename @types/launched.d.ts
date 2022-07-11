@@ -30,6 +30,6 @@ declare namespace Launched {
   }
 
   interface Order extends Shopify.Order {
-    isCancellable?: boolean
+    is_cancellable?: boolean
   }
 }
