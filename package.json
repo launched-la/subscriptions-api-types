@@ -1,6 +1,6 @@
 {
   "name": "@launchedla/subscriptions-api-types",
-  "version": "1.0.75",
+  "version": "0.0.0",
   "private": true,
   "description": "The Typescript types for subscription-api",
   "author": "Ethan Jon",
@@ -18,9 +18,9 @@
     "fix": "prettier --config .prettierrc 'src/**/*.ts' --write"
   },
   "devDependencies": {
-    "@launchedla/snacktime": "^0.0.35",
+    "@launchedla/snacktime": "^0.0.36",
     "@tsconfig/node16": "^1.0.3",
-    "prettier": "^2.1.2"
+    "prettier": "^2.7.1"
   },
   "volta": {
     "node": "16.13.1"
