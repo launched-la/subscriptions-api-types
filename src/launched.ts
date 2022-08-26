@@ -1,4 +1,4 @@
-import { Order as ShopifyOrder } from './shopify'
+import { LineItem as ShopifyLineItem, Order as ShopifyOrder } from './shopify'
 
 export interface Child {
   name: string
@@ -28,6 +28,11 @@ export interface PaymentInformation {
   image_url?: string
 }
 
+export interface LineItem extends ShopifyLineItem {
+  image_src?: string
+}
+
 export interface Order extends ShopifyOrder {
   is_cancellable?: boolean
+  line_items: LineItem[]
 }
