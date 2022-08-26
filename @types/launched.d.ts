@@ -29,7 +29,12 @@ declare namespace Launched {
     image_url?: string
   }
 
+  interface LineItem extends Shopify.LineItem {
+    image_src?: string
+  }
+
   interface Order extends Shopify.Order {
     is_cancellable?: boolean
+    line_items: LineItem[]
   }
 }
