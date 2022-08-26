@@ -163,6 +163,7 @@ declare namespace Shopify {
     discount_allocations: any[]
     admin_graphql_api_id: string
     tax_lines: TaxLine[]
+    image_src: string
   }
 
   interface Location {
