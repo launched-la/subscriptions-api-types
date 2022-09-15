@@ -255,7 +255,11 @@ export interface Order {
 }
 
 export interface ShippingLine {
-  id: number
+  code: string
+  description: string
+  price: string
+  source: string
+  title: string
 }
 
 export interface Subscription {
