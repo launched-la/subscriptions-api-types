@@ -198,7 +198,27 @@ declare namespace Shopify {
     key: string
     namespace: string
     value: string | number
-    value_type: 'integer' | 'string' | 'json_string'
+    type:
+      | 'boolean'
+      | 'collection_reference'
+      | 'color'
+      | 'date'
+      | 'date_time'
+      | 'dimension'
+      | 'file_reference'
+      | 'json'
+      | 'money'
+      | 'multi_line_text_field'
+      | 'number_decimal'
+      | 'number_integer'
+      | 'page_reference'
+      | 'product_reference'
+      | 'rating'
+      | 'single_line_text_field'
+      | 'url'
+      | 'variant_reference'
+      | 'volume'
+      | 'weight'
   }
 
   interface Product {
