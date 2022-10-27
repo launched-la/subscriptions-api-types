@@ -253,7 +253,11 @@ declare namespace Recharge {
   }
 
   interface ShippingLine {
-    id: number
+    code: string
+    description: string
+    price: string
+    source: string
+    title: string
   }
 
   interface Subscription {
