@@ -1,5 +1,5 @@
-import type * as Launched from './launched'
-import type * as Shopify from './shopify'
+import type * as Launched from '../launched'
+import type * as Shopify from '../shopify'
 
 export interface Address {
   address1: string
@@ -328,3 +328,5 @@ export interface Metafield {
   value_type: 'string' | 'json_string' | 'integer'
   description?: string
 }
+
+export * as V2021_11 from './v2021-11'
