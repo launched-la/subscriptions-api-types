@@ -197,6 +197,7 @@ declare namespace Shopify {
     id?: number
     key: string
     namespace: string
+    value: string | number
     value_type: 'integer' | 'string' | 'json_string'
   }
 
