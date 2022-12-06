@@ -29,6 +29,8 @@ export interface AddressUpdateInput {
   phone?: string
   province?: string
   zip?: string
+  /** This is undocumented on API version 2021-01, but it seems to work anyway. */
+  payment_method_id?: number
 }
 
 export interface AsyncBatch {
