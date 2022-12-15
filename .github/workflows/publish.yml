@@ -1,8 +1,8 @@
-name: release branch
+name: publish package to npm
 
 on:
   push:
-    branches: [master]
+    branches: [none]
 
 jobs:
   publish:
