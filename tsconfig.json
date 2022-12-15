@@ -8,8 +8,8 @@
     "allowJs": false,
     "strict": true,
     "useUnknownInCatchVariables": false,
-    "outDir": "dist",
     "declaration": true,
+    "emitDeclarationOnly": true,
     "declarationDir": "types",
     "removeComments": false
   },
