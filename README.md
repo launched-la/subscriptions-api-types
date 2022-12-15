@@ -1,7 +1,5 @@
-Publishes to npm should occur from the 'release' branch.
+## Semantic Release
 
-The 'master' branch is pulled into repos that have not yet been updated to use the es6 exports that the release branch uses. These rely on namespaces instead of es6 exports.
+This repository uses Semantic Release to publish its package to npm via GitHub Actions, so don't manually publish to the package registry.
 
-## TODO
-
-Update all dependent repos to use the @launchedla/subscriptions-api-types npm package instead of pulling in the master branch of this repo directly.
+To indicate to Semantic Release that a commit represents a fix, feature, or breaking update, use Semantic Release's commit message format: https://github.com/semantic-release/semantic-release#how-does-it-work
