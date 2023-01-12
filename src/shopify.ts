@@ -34,6 +34,7 @@ export interface Bundle {
 }
 
 export interface Cart {
+  attributes: Record<string, string>;
   items: Item[]
 }
 
