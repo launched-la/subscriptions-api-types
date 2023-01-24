@@ -104,7 +104,7 @@ export interface Item {
   image: string
   key: string
   price: number
-  product_id: string
+  product_id: number
   product_description: string
   product_title: string
   properties?: {
