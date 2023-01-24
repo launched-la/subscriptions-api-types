@@ -34,7 +34,7 @@ export interface Bundle {
 }
 
 export interface Cart {
-  attributes: Record<string, string>;
+  attributes: Record<string, string>
   items: Item[]
 }
 
@@ -104,6 +104,7 @@ export interface Item {
   image: string
   key: string
   price: number
+  product_id: string
   product_description: string
   product_title: string
   properties?: {
