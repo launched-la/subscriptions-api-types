@@ -115,6 +115,7 @@ export interface Item {
   variant_id: number
   variant_options: string[]
   variant_title: string
+  vendor: string
   title: string
 }
 
