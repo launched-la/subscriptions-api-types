@@ -98,3 +98,81 @@ export interface CreditAccount {
   /** @example "2023-02-08T15:02:24+00:00" */
   updated_at: string
 }
+
+/**
+ * A bundle selection represents the contents within a Bundle linked to an individual Subscription.
+ * It can represent the selection for upcoming orders or past orders.
+ * A BundleSelection is associated with a corresponding Subscription and a BundleVariant
+ * (the BundleVariant is used to validate contents in the selection).
+ * https://developer.rechargepayments.com/2021-11/bundle_selections/bundle_selection_object
+ */
+export interface BundleSelection {
+  /** The unique numeric identifier for the BundleSelection. */
+  id: number
+
+  /** The ID of the BundleVariant associated with the BundleSelection. */
+  bundle_variant_id: number
+
+  /** The ID of the PurchaseItem associated with the BundleSelection. */
+  purchase_item_id: number
+
+  /**
+   * The date and time when the contents were selected.
+   * @example "2023-02-08T15:02:24+00:00"
+   */
+  created_at: string
+
+  /**
+   * The product id as it appears in the external e-commerce platform. The external_product_id of the Product record in Recharge,
+   * linking the BundleSelection to a Product associated with a Bundle.
+   */
+  external_product_id: string
+
+  /**
+   * The variant id as it appears in the external e-commerce platform. The external_variant_id of the Product record in Recharge,
+   * linking the BundleSelection to a Product associated with a Bundle.
+   */
+  external_variant_id: string
+
+  /** A list of item objects, each containing information about a distinct product selected as part of the Bundle. */
+  items: {
+    /** The unique numeric identifier for the item selection. */
+    id: number
+
+    /** The collection id as it appears in the external e-commerce platform. */
+    collection_id: string
+
+    /** The identifier of the external e-commerce platform. */
+    collection_source: string
+
+    /**
+     * The date and time when this item was selected.
+     * @example "2023-02-08T15:02:24+00:00"
+     */
+    created_at: string
+
+    /**
+     * The product id as it appears in the external e-commerce platform.
+     * This is the item which is going to be extracted when the Bundle is processed.
+     */
+    external_product_id: string
+
+    /**
+     * The variant id as it appears in the external e-commerce platform.
+     * This is the item which is going to be extracted when the Bundle is processed.
+     */
+    external_variant_id: string
+
+    /** The quantity of this product. */
+    quantity: number
+
+    /** The date and time at which the item selection was most recently updated. */
+    updated_at: string
+  }[]
+
+  /**
+   * The date and time at which the BundleSelection was most recently updated.
+   * @example "2023-02-08T15:02:24+00:00"
+   */
+  updated_at: string
+}
