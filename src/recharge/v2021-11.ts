@@ -168,6 +168,9 @@ export interface BundleSelection {
 
     /** The date and time at which the item selection was most recently updated. */
     updated_at: string
+
+    /** **WARNING: UNDOCUMENTED** */
+    price: string
   }[]
 
   /**
