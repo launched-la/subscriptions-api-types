@@ -191,11 +191,7 @@ export type RcGroupedSubscriptionChild = Omit<V2021_11.BundleSelection['items'][
   Pick<
     Subscription,
     'shopify_product_id' | 'shopify_variant_id' | 'product_title' | 'variant_title' | 'sku' | 'product' | 'variant'
-    // we have these from the bundle selection item already
-    // | 'created_at'
-    // | 'updated_at'
-    // | 'price'
-    // | 'quantity'
+    // we have these from the bundle selection item already: | 'created_at' | 'updated_at' | 'price' | 'quantity'
   > & {
     bundle_selection_item_id: number
   }
