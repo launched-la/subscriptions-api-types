@@ -1,5 +1,6 @@
 import type * as Launched from '../launched'
 import type * as Shopify from '../shopify'
+import type * as V2021_11 from './v2021-11'
 
 export interface Address {
   address1: string
@@ -173,18 +174,40 @@ export interface Discount {
   once_per_customer: boolean
 }
 
-export interface GroupedSubscription {
-  bundleId?: number
+export interface GroupedSubscriptionBase {
   address?: Address
   charges?: Charge[]
-  children: Subscription[]
   subscription: Subscription
   onetimes?: OneTimeProduct[]
   snacktimeActions?: Partial<import('@launchedla/snacktime').Types.Action>[]
   bundleInfo?: Launched.BundleInfo
   bundleSavings?: string
+  lastCharge?: Charge
   futureCharge?: Charge
 }
+
+// we omit the id property and provide it as bundle_selection_id instead so that it's not interpreted as a subscription id
+export type RcGroupedSubscriptionChild = Omit<V2021_11.BundleSelection['items'][number], 'id' | 'external_product_id' | 'external_variant_id'> &
+  Pick<
+    Subscription,
+    'shopify_product_id' | 'shopify_variant_id' | 'product_title' | 'variant_title' | 'sku' | 'product' | 'variant'
+    // we have these from the bundle selection item already: | 'created_at' | 'updated_at' | 'price' | 'quantity'
+  > & {
+    bundle_selection_item_id: number
+  }
+
+export interface HbGroupedSubscription extends GroupedSubscriptionBase {
+  manager: 'hellobello'
+  bundleId?: number
+  children: Subscription[]
+}
+
+export interface RcGroupedSubscription extends GroupedSubscriptionBase {
+  manager: 'recharge'
+  children: RcGroupedSubscriptionChild[]
+}
+
+export type GroupedSubscription = HbGroupedSubscription | RcGroupedSubscription
 
 export interface LineItem {
   id: number
