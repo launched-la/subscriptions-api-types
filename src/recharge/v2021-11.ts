@@ -179,3 +179,120 @@ export interface BundleSelection {
    */
   updated_at: string
 }
+
+export interface Subscription {
+  /** Unique numeric identifier for the subscription. */
+  id: number
+  /** Unique numeric identifier for the address the subscription is associated with. */
+  address_id: number
+  /** Unique numeric identifier for the customer the subscription is tied to. */
+  customer_id: number
+  /** An object used to contain analytics data such as utm parameters. */
+  analytics_data: {
+    utm_params: {
+      utm_source: string
+      utm_medium: string
+    }[]
+  }
+  /** Reason provided for cancellation. */
+  cancellation_reason: string | null
+  /** Additional comment for cancellation. Maximum length is 1024 characters. */
+  cancellation_reason_comments: string | null
+  /**
+   * The time the subscription was cancelled.
+   * @example "2021-02-25T21:27:19+00:00"
+   */
+  cancelled_at: string | null
+  /**
+   * The number of units (specified in `order_interval_unit`) between each Charge.
+   * For example, `order_interval_unit`=month and `charge_interval_frequency`=3, indicate charge every 3 months.
+   */
+  charge_interval_frequency: number
+  /** The time the subscription was created. */
+  created_at: string
+  /** Set the number of charges until subscription expires. */
+  expire_after_specific_number_of_charges: number | null
+  /** An object containing the product id as it appears in external platforms. */
+  external_product_id: {
+    /** The product id as it appears in the external e-commerce platform. The `external_product_id` of the Product record in Recharge, linking a Plan to a Product. */
+    ecommerce: string
+  }
+  /** An object containing the variant id as it appears in external platforms. */
+  external_variant_id: {
+    /** The variant id as it appears in the external e-commerce platform. The `external_variant_id` of the Product record in Recharge, linking a Plan to a Product. */
+    ecommerce: string
+  }
+  /** Retrieves `true` if there is queued charge. Otherwise, retrieves `false`. */
+  has_queued_charges: boolean
+  /** Value is set to `true` if it is a prepaid item. */
+  is_prepaid: boolean
+  /** Value is set to `true` if it is not a prepaid item */
+  is_skippable: boolean
+  /** Value is set to `true` if it is not a prepaid item and if in Customer portal settings swap is allowed for customers. */
+  is_swappable: boolean
+  /** Retrieves `true` if charge has an error max retries reached. Otherwise, retrieves `false`. */
+  max_retries_reached: boolean
+  /**
+   * Date of the next charge for the subscription.
+   * @example "2023-07-15"
+   */
+  next_charge_scheduled_at: string | null
+  /**
+   * The set day of the month order is created. Default is that there isn’t a strict day of the month when the order is created.
+   * This is only applicable to subscriptions with order_interval_unit:“month”.
+   */
+  order_day_of_month: number | null
+  /**
+   * The set day of the week order is created. Default is that there isn’t a strict day of the week order is created.
+   * This is only applicable to subscriptions with order_interval_unit = “week”.
+   * Value of 0 equals to Monday, 1 to Tuesday etc.
+   */
+  order_day_of_week: number | null
+  /**
+   * The number of units (specified in order_interval_unit) between each order.
+   * For example, order_interval_unit=month and order_interval_frequency=3, indicate order every 3 months.
+   * Max value: 1000
+   */
+  order_interval_frequency: number
+  /** The frequency unit used to determine when a subscription’s order is created. */
+  order_interval_unit: 'day' | 'week' | 'month'
+  /** The presentment currency of the subscription. */
+  presentment_currency: string
+  /** The price of the item before discounts, taxes, or shipping have been applied. */
+  price: string
+  /** The name of the product in a store’s catalog. */
+  product_title: string
+  /**
+   * A list of line item objects, each one containing information about the subscription.
+   * Custom key-value pairs can be installed here, they will appear on the connected queued charge
+   * and after it is processed on the order itself.
+   */
+  properties: {
+    /** The name of the property. */
+    name: string
+    /** The value of the property. */
+    value: string
+  }[]
+  /** The number of items in the subscription. */
+  quantity: number
+  /** A unique identifier of the item in the fulfillment. In cases where SKU is blank, it will be dynamically pulled whenever it is used. */
+  sku: string | null
+  /**
+   * Flag that is automatically updated to true when SKU is passed on create or update. When sku_override is true,
+   * the SKU on the subscription will be used to generate charges and orders. When sku_override is false, Recharge
+   * will dynamically fetch the SKU from the corresponding external platform variant.
+   */
+  sku_override: boolean
+  /**
+   * The status of the subscription.
+   * EXPIRED - This status occurs when the maximum number of charges for a product has been reached.
+   */
+  status: 'active' | 'cancelled' | 'expired'
+  /**
+   * The date time at which the purchase_item record was last updated.
+   * @example "2020-07-10T10:30:51+00:00"
+   */
+  updated_at: string
+  /** The name of the variant in a shop’s catalog. */
+  variant_title: string
+}
