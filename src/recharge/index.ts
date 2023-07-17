@@ -327,7 +327,7 @@ export interface SubscriptionItemUpdateInput {
   properties?: string // JSON
   quantity: number
   variantId: number
-  price?: string
+  price: string | undefined
 }
 
 export interface SubscriptionUpdateInput {

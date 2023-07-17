@@ -119,7 +119,7 @@ export interface Item {
   title: string
 }
 
-export type CreateItemParams = [number, { properties?: object; quantity?: number }?]
+export type CreateItemParams = [number, { properties?: object; quantity?: number; price: string | undefined }?]
 
 export interface TaxLine {
   title: string
