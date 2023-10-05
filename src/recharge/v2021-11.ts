@@ -1,31 +1,243 @@
 import type * as Recharge from './index'
 
 /**
+ * This version of Recharge's API has a much better DateTime type which specifies the timezone.
+ * @example "2018-11-14T09:00:01+00:00"
+ */
+type DateTime = string
+
+type Int = number
+type Float = number
+
+/** Helper type inferred from various uses of addresses in Recharge's docs. */
+export interface PhysicalAddress {
+  address1?: string
+  address2?: string
+  city?: string
+  company?: string
+  /** @example "United States" */
+  country?: string
+  /** @example "US" */
+  country_code?: string
+  first_name?: string
+  last_name?: string
+  phone?: string
+  province?: string
+  zip?: string
+}
+
+/**
+ * @see https://developer.rechargepayments.com/2021-11/addresses/address_object
+ */
+export interface Address {
+  /** Unique numeric identifier for the address. */
+  id: Int
+  /** Unique numeric identifier for the Payment Method associated to the Address. */
+  payment_method_id: number
+  /** First line of the customer's address. */
+  address1: string
+  /** Second line of the customer's address. */
+  address2?: string
+  /** City of the customer's address. */
+  city: string
+  /** The company associated with the address. */
+  company?: string
+  /** 2-letter country code. */
+  country_code: string
+  /** Unique numeric identifier for the customer the address is associated with. */
+  customer_id: Int
+  /** A list of discounts applied on the address. These discounts will apply to future recurring charges associated with this address. */
+  discounts: {
+    id: Int
+  }[]
+  /** First name of the customer. */
+  first_name: string
+  /** Last name of the customer. */
+  last_name: string
+  /** Replaces cart_attributes. Extra information that is added to the order. */
+  order_attributes: {
+    /** The name for the attribute. */
+    name: string
+    /** The value for the associated attribute. */
+    value: string
+  }[]
+  /** Notes to be added to all orders associated with the address. */
+  order_note: string
+  /** Phone number of the customer. */
+  phone: string
+  /** The presentment currency of the address. SCI only. */
+  // presentment_currency?: string;
+  /** Province of the customer's address. */
+  province: string
+  /** Shipping rates that have previously been overridden via shipping_lines_override but are currently inactive. */
+  shipping_lines_conserved: {
+    /** The code of the associated shipping line. */
+    code: string
+    /** The price (in store’s currency) of the associated shipping line. */
+    price: string
+    /** The title of the associated shipping line. */
+    title: string
+  }[]
+  shipping_lines_override: {
+    /** The code of the associated shipping line. */
+    code: string
+    /** The price (in store’s currency) of the associated shipping line. */
+    price: string
+    /** The title of the associated shipping line. */
+    title: string
+  }[]
+  /** The zip or postal code associated with the address. */
+  zip: string
+  /** The date and time when the address was created. */
+  created_at: DateTime
+  /** The date and time when the address was last updated. */
+  updated_at: DateTime
+}
+
+/**
+ * @see https://developer.rechargepayments.com/2021-11/orders/orders_object
+ */
+export interface Order {
+  /** The unique numeric identifier for the order. */
+  id: Int
+  /** The id of the associated Address within Recharge. */
+  address_id: Int
+  billing_address: PhysicalAddress
+  charge: {
+    id: Int
+    /** An object containing external transaction ids associated with this charge, as they appear in external platforms. */
+    external_transaction_id: {
+      /** The ID of the associated transaction in a payment processor system (like Stripe). */
+      payment_processor: Int
+    }
+  }
+  /** Details of the access method used by the purchase. */
+  client_details: {
+    /** The IP address of the buyer as detected in Checkout. */
+    browser_ip: string
+    /** The user agent detected during Checkout. */
+    user_agent: string
+  }
+  created_at: DateTime
+  currency: string
+  customer: {
+    id: Int
+    email: string
+    /** An object containing customer information associated with this charge. */
+    external_customer_id: {
+      /** The customer ID as it appears in the external e-commerce platform. */
+      ecommerce: string
+    }
+    /** The hash of the Customer associated with the Charge. */
+    hash: string
+  }
+  discounts: {
+    id: Int
+    value: Float
+    value_type: 'percentage' | 'fixed_amount'
+  }[]
+  /** The cart token as it appears in an external system. */
+  external_cart_token: string
+  external_order_id: {
+    /** The order ID as it appears in the external e-commerce platform. */
+    ecommerce: string
+  }
+  /** An object containing the external order numbers. */
+  external_order_number: {
+    /** The product id as it appears in the external e-commerce platform. The external_product_id of the Product record in Recharge, linking a Plan to a Product. */
+    ecommerce: string
+  }
+  /** A boolean representing if this Order is generated from a prepaid purchase. */
+  is_prepaid: boolean
+  line_items: {
+    purchase_item_id: Int
+    external_product_id: {
+      ecommerce: string
+    }
+    external_variant_id: {
+      ecommerce: string
+    }
+    grams: Int
+    handle: string
+    images: {
+      large: string
+      medium: string
+      small: string
+      original: string
+      /** The sort order in which the x image from the array should appear when displayed. */
+      // sort_order: Int
+    }
+    original_price: string
+    properties: {
+      name: string
+      value: string
+    }[]
+    purchase_item_type: 'subscription' | 'onetime'
+    quantity: Int
+    sku: string
+    tax_due: string
+    tax_lines: {
+      price: string
+      rate: string
+      title: string
+    }[]
+    taxable: boolean
+    taxable_amount: string
+    title: string
+    total_price: string
+    unit_price: string
+    unit_price_includes_tax: boolean
+    variant_title: string
+  }[]
+  note: string
+  order_attributes: {
+    name: string
+    value: string
+  }[]
+  processed_at: DateTime
+  scheduled_at: DateTime
+  shipping_address: PhysicalAddress
+  shipping_lines: {
+    code: string
+    price: string
+    source: string
+    title: string
+    taxable: string
+    tax_lines: {
+      price: string
+      rate: string
+      title: string
+    }[]
+  }[]
+  status: 'success' | 'error' | 'queued' | 'cancelled'
+  subtotal_price: string
+  /** A comma separated list of tags on the Order. */
+  tags: string
+  tax_lines: {
+    price: string
+    rate: string
+    title: string
+  }[]
+  taxable: boolean
+  total_discounts: string
+  total_duties: string
+  total_line_items_price: Int
+  total_price: string
+  total_refunds: string
+  total_tax: string
+  total_weight_grams: Int
+  type: 'checkout' | 'recurring'
+  updated_at: DateTime
+}
+
+/**
  * https://developer.rechargepayments.com/2021-11/payment_methods/payment_methods_object
  */
 export interface PaymentMethod {
   id: number
   customer_id: number
-  billing_address: {
-    address1?: string
-    address2?: string
-    city?: string
-    company?: string
-    /** @example "United States" */
-    country?: string
-    /** @example "US" */
-    country_code?: string
-    first_name?: string
-    last_name?: string
-    phone?: string
-    province?: string
-    zip?: string
-  }
-  /**
-   * A bizarre non-standard timestamp format without a timezone, but probably in UTC.
-   * @example "2022-10-25T16:21:14"
-   */
-  created_at: string
+  billing_address: PhysicalAddress
+  created_at: DateTime
   default: boolean
   payment_details: {
     brand: string
