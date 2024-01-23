@@ -26,8 +26,16 @@ export interface Bundle {
   mainTrainingPantsProduct?: Product
   numAddOns: number
   numDiscountAddOns: number
-  possibleChoices?: Variant[]
-  possibleNighttimeChoices?: Variant[]
+  possibleChoices?: (Variant & {
+    product: {
+      tags: string[]
+    }
+  })[]
+  possibleNighttimeChoices?: (Variant & {
+    product: {
+      tags: string[]
+    }
+  })[]
   shippingIntervalFrequencies: number[]
   shippingIntervalUnitType: string
   subscriptionId: string
