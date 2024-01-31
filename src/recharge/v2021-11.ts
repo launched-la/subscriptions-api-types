@@ -507,4 +507,7 @@ export interface Subscription {
   updated_at: string
   /** The name of the variant in a shop’s catalog. */
   variant_title: string
+  include?: {
+    bundle_selections?: BundleSelection;
+  }
 }
