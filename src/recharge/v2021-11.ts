@@ -508,6 +508,60 @@ export interface Subscription {
   /** The name of the variant in a shop’s catalog. */
   variant_title: string
   include?: {
-    bundle_selections?: BundleSelection;
+    bundle_selections?: BundleSelection
   }
+}
+
+export interface Customer {
+  /** Unique numeric identifier for the Customer. */
+  id: number
+  /** An object containing analytics data associated with the customer. */
+  analytics_data?: {
+    utm_params: {
+      utm_source: string
+      utm_medium: string
+    }[]
+  }
+  /** A boolean that indicates whether Recharge credits will be applied to the next recurring charge. */
+  apply_credit_to_next_recurring_charge?: boolean
+  /**
+   * The date and time when the customer was created.
+   * @example "2020-07-10T10:30:51+00:00"
+   */
+  created_at: string
+  /** The email address of the customer. */
+  email: string
+  /** An object containing external ids for the customer record. */
+  external_customer_id: {
+    /** The customer ID as it appears in the external e-commerce platform. */
+    ecommerce: string
+  } | null
+  /**
+   * Date when first charge was processed for the customer.
+   * @example "2020-07-10T10:30:51+00:00"
+   */
+  first_charge_processed_at: string | null
+  /** The customer’s first name. */
+  first_name: string
+  /** A boolean that indicates if the customer has a payment method that is in dunning (failed charge). */
+  has_payment_method_in_dunning: boolean
+  /** Is the payment method valid or not. */
+  has_valid_payment_method: boolean
+  /** The unique string identifier used in a customers portal link. */
+  hash: string
+  /** The customer’s last name. */
+  last_name: string
+  /** The customer’s phone number. */
+  phone: string | null
+  /** The number of active subscriptions on addresses associated with the customer. */
+  subscriptions_active_count: number
+  /** The total number of subscriptions created on addresses associated with the customer. */
+  subscriptions_total_count: number
+  /** Whether the customer tax exempt or not. */
+  tax_exempt: boolean
+  /**
+   * The date and time when the customer was updated.
+   * @example "2020-07-10T10:30:51+00:00"
+   */
+  updated_at: string
 }
