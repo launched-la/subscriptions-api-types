@@ -17,7 +17,14 @@ export interface BundleInfo {
 }
 
 export interface PaymentInformation {
-  type: string
+  /** @deprecated use type_v2 instead */
+  type: 'stripe' | 'paypal' | 'apple' | 'braintree' | 'todo_remove'
+  /**
+   * Currently one of "CREDIT_CARD", "PAYPAL", "APPLE_PAY", "GOOGLE_PAY", "SEPA_DEBIT", "STORED_VALUE",
+   * but will change unexpectedly if recharge updates its available payment method types. So we type it
+   * as a string rather than as a union.
+   */
+  type_v2: string
   id?: string
   brand?: string
   exp_month?: number
