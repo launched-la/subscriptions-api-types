@@ -21,8 +21,8 @@ export interface PaymentInformation {
   type: 'stripe' | 'paypal' | 'apple' | 'braintree' | 'todo_remove'
   /**
    * Currently one of "CREDIT_CARD", "PAYPAL", "APPLE_PAY", "GOOGLE_PAY", "SEPA_DEBIT", "STORED_VALUE",
-   * but will change unexpectedly if recharge updates its available payment method types. So we type it
-   * as a string rather than as a union.
+   * but will change unexpectedly if recharge updates its available 2021-11 `PaymentMethod.payment_type`s.
+   * So we type it as a string rather than as a union.
    */
   type_v2: string
   id?: string

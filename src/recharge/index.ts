@@ -127,7 +127,7 @@ export interface Customer {
   billing_province: string
   billing_country: string
   billing_phone: string
-  processor_type: 'stripe' | 'braintree'
+  processor_type: 'stripe' | 'braintree' | 'shopify_payments'
   status: 'ACTIVE'
   stripe_customer_token: string
   paypal_customer_token?: string
