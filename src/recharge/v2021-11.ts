@@ -240,10 +240,21 @@ export interface PaymentMethod {
   created_at: DateTime
   default: boolean
   payment_details: {
-    brand: string
-    exp_month: number
-    exp_year: number
-    last4: string
+    /** valid for payment_type "CREDIT_CARD" only. */
+    brand?: string
+    /** valid for payment_type "CREDIT_CARD" only. */
+    exp_month?: number
+    /** valid for payment_type "CREDIT_CARD" only. */
+    exp_year?: number
+    /** valid for payment_type "CREDIT_CARD" only. */
+    last4?: string
+    /** valid for payment_type "PAYPAL" only. */
+    paypal_email?: string
+    /** valid for payment_type "PAYPAL" only. */
+    paypal_payer_id?: string
+    /** if a digital wallet. */
+    wallet_type?: string
+    funding_type?: string
   }
   payment_type: 'CREDIT_CARD' | 'PAYPAL' | 'APPLE_PAY' | 'GOOGLE_PAY' | 'SEPA_DEBIT' | 'STORED_VALUE'
   /** @example "cus_AbCDEjfmtusVtJ" (stripe customer id) */
