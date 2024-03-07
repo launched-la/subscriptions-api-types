@@ -183,8 +183,6 @@ export interface Discount {
 
 export interface GroupedSubscriptionPaymentMethodDetails {
   brand?: string
-  exp_month?: number
-  exp_year?: number
   last4?: string
   paypal_email?: string
   paypal_payer_id?: string
