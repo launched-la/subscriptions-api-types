@@ -174,6 +174,21 @@ export interface Discount {
   once_per_customer: boolean
 }
 
+export interface GroupedSubscriptionPaymentMethodDetails {
+  brand?: string
+  exp_month?: number
+  exp_year?: number
+  last4?: string
+  paypal_email?: string
+  paypal_payer_id?: string
+}
+
+export interface GroupedSubscriptionPaymentMethod {
+  payment_details: GroupedSubscriptionPaymentMethodDetails
+  payment_type: string
+  processor_name: string
+}
+
 export interface GroupedSubscriptionBase {
   address?: Address
   charges?: Charge[]
@@ -184,6 +199,7 @@ export interface GroupedSubscriptionBase {
   bundleSavings?: string
   lastCharge?: Charge
   futureCharge?: Charge
+  paymentMethod: GroupedSubscriptionPaymentMethod
 }
 
 // we omit the id property and provide it as bundle_selection_id instead so that it's not interpreted as a subscription id
