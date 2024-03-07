@@ -17,6 +17,12 @@ export interface Address {
   phone: string
   province: string
   zip: string
+  include?: {
+    // Seems to be the same as the 2021-11 version even when queried from 2021-01.
+    // Not sure why there could be multiple payment methods attached to an address.
+    // We typically just care about the first.
+    payment_methods?: V2021_11.PaymentMethod[]
+  }
 }
 
 export interface AddressUpdateInput {
