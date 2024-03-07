@@ -93,6 +93,7 @@ export interface Charge {
   note_attributes: string[]
   number_times_tried: number
   processed_at: string
+  processor_name: string
   retry_date: string
   scheduled_at: string
   shipments_count: number
