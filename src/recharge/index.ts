@@ -204,7 +204,7 @@ export interface GroupedSubscriptionBase {
   bundleSavings?: string
   lastCharge?: Charge
   futureCharge?: Charge
-  paymentMethod: GroupedSubscriptionPaymentMethod
+  paymentMethod?: GroupedSubscriptionPaymentMethod
 }
 
 // we omit the id property and provide it as bundle_selection_id instead so that it's not interpreted as a subscription id
