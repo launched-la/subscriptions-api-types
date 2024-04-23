@@ -403,6 +403,22 @@ export interface BundleSelection {
   updated_at: string
 }
 
+interface BundleProduct {
+  created_at: string
+  custom_prices: boolean
+  customization_window_disabled_message: string | null
+  customization_window: number | null
+  default_bundle_variant_id: number
+  description: string | null
+  external_product_id: string
+  id: number
+  is_customizable: boolean
+  max_quantity_per_variant: number | null
+  reset_box_contents: boolean
+  title: string
+  updated_at: string
+}
+
 export interface Subscription {
   /** Unique numeric identifier for the subscription. */
   id: number
@@ -520,6 +536,8 @@ export interface Subscription {
   variant_title: string
   include?: {
     bundle_selections?: BundleSelection
+    address?: Address
+    bundle_product?: BundleProduct
   }
 }
 
