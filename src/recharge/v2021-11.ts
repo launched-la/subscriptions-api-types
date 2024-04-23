@@ -273,6 +273,7 @@ export interface PaymentMethod {
 export interface Charge extends Recharge.Charge {
   include: {
     payment_methods?: PaymentMethod[]
+    transactions?: Recharge.ChargeTransaction[]
   }
 }
 
