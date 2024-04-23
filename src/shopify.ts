@@ -341,6 +341,33 @@ export interface Order {
   customer: Customer
 }
 
+export interface OrderTransaction {
+  amount: string
+  authorization: string
+  created_at: string
+  currency: string
+  error_code: string
+  gateway: 'shopify_payments' | 'gift_card' | ''
+  id: number
+  kind: string
+  status: string
+  receipt?: {
+    gift_card_id?: number
+    gift_card_last_characters?: string
+    object?: 'payment_intent'
+  }
+  payment_details?: {
+    credit_card_bin: string
+    avs_result_code: string
+    cvv_result_code: string
+    credit_card_number: string
+    credit_card_company: string
+    credit_card_name: string
+    credit_card_wallet: string
+    credit_card_expiration_month: number
+    credit_card_expiration_year: number
+  }
+}
 export interface Refund {
   id: number
   shipping?: {
