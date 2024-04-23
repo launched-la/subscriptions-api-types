@@ -113,6 +113,19 @@ export interface Charge {
   total_weight: number
   type: 'CHECKOUT' | 'RECURRING'
   updated_at: string
+  include?: {
+    transactions?: ChargeTransaction[]
+  }
+}
+
+export interface ChargeTransaction {
+  amount: string
+  created_at: string
+  external_transaction_id: string
+  is_primary: boolean
+  kind: string
+  payment_method_id: number
+  processor_name: 'recharge_credits' | 'stripe' | 'braintree' | 'paypal' | 'shopify_payments'
 }
 
 export interface Customer {
