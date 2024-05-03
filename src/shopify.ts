@@ -24,6 +24,8 @@ export interface Bundle {
   discountAddOns?: Product[]
   mainProduct?: Product
   mainTrainingPantsProduct?: Product
+  mainDiaperProductSmall?: Product
+  mainTrainingPantsProductSmall?: Product
   numAddOns: number
   numDiscountAddOns: number
   possibleChoices?: (Variant & {
