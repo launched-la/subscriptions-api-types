@@ -110,6 +110,7 @@ export interface Order {
       /** The ID of the associated transaction in a payment processor system (like Stripe). */
       payment_processor: Int
     }
+    status: Charge['status']
   }
   /** Details of the access method used by the purchase. */
   client_details: {
@@ -136,6 +137,7 @@ export interface Order {
     value: Float
     value_type: 'percentage' | 'fixed_amount'
   }[]
+  error: string | null
   /** The cart token as it appears in an external system. */
   external_cart_token: string
   external_order_id: {
@@ -270,11 +272,12 @@ export interface PaymentMethod {
   updated_at: string
 }
 
-export interface Charge extends Recharge.Charge {
+export interface Charge extends Omit<Recharge.Charge, 'status'> {
   include: {
     payment_methods?: PaymentMethod[]
     transactions?: Recharge.ChargeTransaction[]
   }
+  status: 'success' | 'error' | 'queued' | 'skipped' | 'refunded' | 'partially_refunded' | 'pending_manual_payment' | 'pending'
 }
 
 export interface CreditAdjustment {
