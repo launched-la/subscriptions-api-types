@@ -272,12 +272,18 @@ export interface PaymentMethod {
   updated_at: string
 }
 
-export interface Charge extends Omit<Recharge.Charge, 'status'> {
+export interface Charge extends Omit<Recharge.Charge, 'status' | 'shopify_order_id' | 'transaction_id'> {
   include: {
     payment_methods?: PaymentMethod[]
     transactions?: Recharge.ChargeTransaction[]
   }
   status: 'success' | 'error' | 'queued' | 'skipped' | 'refunded' | 'partially_refunded' | 'pending_manual_payment' | 'pending'
+  external_order_id: {
+    ecommerce: string
+  }
+  external_transaction_id: {
+    payment_processor: number
+  }
 }
 
 export interface CreditAdjustment {
