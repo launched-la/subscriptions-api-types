@@ -1,9 +1,16 @@
 {
-  "name": "@launchedla/subscriptions-api-types",
+  "name": "@launched-la/subscriptions-api-types",
   "version": "0.0.0",
   "description": "The Typescript types for subscription-api",
   "author": "Ethan Jon",
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/launched-la/subscriptions-api-types.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "exports": {
     ".": {
       "types": "./types/index.d.ts"

@@ -1,4 +1,4 @@
-name: publish package to npm
+name: publish package to GitHub Packages
 
 on:
   push:
@@ -7,6 +7,13 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      packages: write
+      issues: write
+      pull-requests: write
+      id-token: write
 
     steps:
       - uses: actions/checkout@v3
@@ -18,8 +25,14 @@ jobs:
 
       - run: npm ci
 
+      - name: Configure GitHub Packages auth
+        run: |
+          cat > .npmrc <<'EOF'
+          //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+          EOF
+
       - name: Semantic release
-        run: npx semantic-release@20.0.2 -b $GITHUB_REF_NAME -p @semantic-release/commit-analyzer -p @semantic-release/github -p @semantic-release/release-notes-generator -p @semantic-release/npm
+        run: npx -p semantic-release@20.0.2 -p @semantic-release/exec@6.0.3 -- semantic-release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
